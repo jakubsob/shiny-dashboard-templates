@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --custom-green: #a8d8b2;
+  --custom-purple: #a89eff;
+  --custom-blue: #6abde7;
+  --custom-pink: #f1abbc;
+  --custom-grey: #adb5bd;
+  --custom-body-bg: #f8f9fa;
+  --custom-text-light: #a1a1a1;
+  --custom-text-dark: #343a40;
+}
+
+.bslib-sidebar-layout {
+  --_sidebar-bg: white !important;
+  --_sidebar-fg: var(--bs-gray-dark) !important;
+  --_padding: 1rem !important;
+  --_sidebar-width: 5rem !important;
+
+  .sidebar-title {
+    margin-bottom: calc(var(--_icon-size, 1rem) / 2) !important;
+    padding-bottom: calc(var(--_icon-size, 1rem) / 2) !important;
+  }
+
+  >.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none !important;
+
+    >.sidebar-content {
+      padding: 1rem !important;
+      gap: 0px !important;
+    }
+  }
+
+  >.collapse-toggle {
+    top: 0px !important;
+    left: calc(var(--_sidebar-width) / 2) !important;
+
+    transform: translateX(-50%);
+    right: unset !important;
+  }
+}
+.sidebar-collapsed {
+  .nav-tabs {
+    padding-left: var(--_padding-icon);
+  }
+}
+
+.sidebar-nav-item {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--_sidebar-fg);
+  border-radius: var(--bs-border-radius);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+    text-decoration: none;
+  }
+
+  &.active {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+  }
+}
+
+.sidebar-nav-subitem {
+  color: var(--bs-gray);
+}
+
+.card-header {
+  border-bottom: none !important;
+  padding-top: 1rem;
+}
+
+.card {
+  box-shadow: none !important;
+}
+
+.progress {
+  height: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.bg-custom-green {
+  background-color: var(--custom-green) !important;
+}
+
+.bg-custom-purple {
+  background-color: var(--custom-purple) !important;
+}
+
+.bg-custom-blue {
+  background-color: var(--custom-blue) !important;
+}
+
+.bg-custom-pink {
+  background-color: var(--custom-pink) !important;
+}
+
+.bg-custom-grey {
+  background-color: var(--custom-grey) !important;
+}
+
+.stat-list .list-group-item {
+  border: none;
+  padding: 0.8rem 0;
+}
+
+.stat-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.75rem;
+}
+
+.stat-label {
+  font-weight: 500;
+}
+
+.stat-number {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.stat-percent {
+  color: var(--custom-text-light);
+  font-weight: 500;
+}

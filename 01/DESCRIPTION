@@ -1,0 +1,8 @@
+Package: Template
+Version: 0.1.0
+Encoding: UTF-8
+Imports:
+  bslib,
+  shiny,
+  sass,
+RoxygenNote: 7.3.2

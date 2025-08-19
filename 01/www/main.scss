@@ -1,0 +1,107 @@
+.bslib-sidebar-layout {
+  --_sidebar-bg: white !important;
+  --_sidebar-fg: var(--bs-gray-dark) !important;
+  --_padding: 0 !important;
+
+  .sidebar-title {
+    margin-bottom: calc(var(--_icon-size, 1rem) / 2) !important;
+    padding-bottom: calc(var(--_icon-size, 1rem) / 2) !important;
+  }
+
+  > .sidebar {
+    border: none !important;
+    box-shadow: inset -1px 0px var(--bs-border-color) !important;
+
+    > .sidebar-content {
+      padding-right: 0px !important;
+      padding-top: calc(var(--_icon-size, 1rem) / 2) !important;
+      padding-left: 1rem !important;
+      gap: 0px !important;
+    }
+  }
+
+  &.sidebar-collapsed > .main {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
+  > .collapse-toggle {
+    top: 0px;
+  }
+}
+
+.nav-tabs {
+  transition: all;
+  background-color: var(--_sidebar-bg);
+  border-bottom: unset;
+
+  .nav-link,
+  > li > a {
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    &.active {
+      border-left: 1px solid var(--bs-border-color);
+      border-right: 1px solid var(--bs-border-color);
+    }
+  }
+
+  ~ .tab-content {
+    border-top: 1px solid var(--bs-border-color);
+  }
+}
+
+.sidebar-collapsed {
+  .nav-tabs {
+    padding-left: var(--_padding-icon);
+  }
+}
+
+.sidebar-nav-item {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--_sidebar-fg);
+  border-radius: var(--bs-border-radius);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &:hover {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+    text-decoration: none;
+  }
+
+  &.active {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-primary);
+    border-top: 1px solid var(--bs-border-color);
+    border-bottom: 1px solid var(--bs-border-color);
+    border-left: 1px solid var(--bs-border-color);
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.sidebar-nav-subitem {
+  color: var(--bs-gray);
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+
+  > * {
+    padding-top: calc(0.5 * var(--bs-gutter-x));
+  }
+}
+
+.card-header {
+  border-bottom: none !important;
+}
