@@ -110,6 +110,24 @@ jobs:
           writeLines(index_content, "site/index.html")
           cat("Created index.html with links to", length(app_dirs), "apps\n")
 
+      - name: Get screenshots
+        shell: Rscript {0}
+        run: |
+          install.packages("shinytest2")
+
+          ignore <- c(".git", ".github", "site")
+          apps <- list.dirs(recursive = FALSE, full.names = FALSE)
+          apps <- apps[!apps %in% ignore]
+          for (app in apps) {
+            driver <- shinytest2::AppDriver$new(app, width = 1280, height = 832)
+            file <- sprintf("site/assets/%s.png", app)
+            dir.create(dirname(file), showWarnings = FALSE, recursive = TRUE)
+            file.remove(file)
+            Sys.sleep(1)
+            driver$get_screenshot(file)
+            driver$stop()
+          }
+
       - name: Upload site artifact
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
